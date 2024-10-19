@@ -3,13 +3,13 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #000; /* Black background */
-  color: white; /* White text */
+  background: #000; 
+  color: white; 
   overflow-x: hidden;
 }
 
 header {
-  background: linear-gradient(to right, #000000, #171a29); /* Black to dark green gradient */
+  background: linear-gradient(to right, #000000, #171a29); 
   height: 100vh;
   text-align: center;
   position: relative;
