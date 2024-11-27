@@ -1,2 +1,2 @@
 # Portfolio
-This is my portfolio website which is still in under construction 
+this is my old project just for fun and is of no use
