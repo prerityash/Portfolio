@@ -47,7 +47,16 @@ html {
   font-size: 16px;
 }
 
-*, *::before, *::after, html, body, a, button, input, textarea, select {
+/* Custom Cursor Management: only hide native pointer once custom cursor is confirmed active */
+body.has-custom-cursor,
+body.has-custom-cursor *,
+body.has-custom-cursor *::before,
+body.has-custom-cursor *::after,
+body.has-custom-cursor a,
+body.has-custom-cursor button,
+body.has-custom-cursor input,
+body.has-custom-cursor textarea,
+body.has-custom-cursor select {
   cursor: none !important;
 }
 
@@ -68,7 +77,8 @@ body {
   pointer-events: none;
   z-index: 999999;
   will-change: transform;
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(-100px, -100px, 0);
+  opacity: 0;
   transition: opacity 0.2s ease;
 }
 

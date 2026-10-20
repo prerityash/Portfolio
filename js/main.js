@@ -8,49 +8,80 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- 0. Custom Magnifier Cursor System ---
   const magnifierCursor = document.getElementById('magnifierCursor');
 
-  if (magnifierCursor && window.matchMedia('(pointer: fine)').matches) {
+  if (magnifierCursor) {
     let mouseX = -100;
     let mouseY = -100;
     let currentX = -100;
     let currentY = -100;
+    let isTracking = false;
 
-    window.addEventListener('mousemove', (e) => {
+    const onFirstMouseMove = (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      currentX = mouseX;
+      currentY = mouseY;
+      isTracking = true;
+
+      magnifierCursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+      magnifierCursor.style.opacity = '1';
+      document.body.classList.add('has-custom-cursor');
+
+      window.removeEventListener('mousemove', onFirstMouseMove);
+      window.addEventListener('mousemove', onMouseMove, { passive: true });
+    };
+
+    const onMouseMove = (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
 
+      if (!isTracking) {
+        currentX = mouseX;
+        currentY = mouseY;
+        isTracking = true;
+        magnifierCursor.style.opacity = '1';
+        document.body.classList.add('has-custom-cursor');
+      }
+
       // Check if mouse is over a dark section to dynamically adapt magnifier contrast
       const hoveredEl = document.elementFromPoint(mouseX, mouseY);
-      if (hoveredEl && hoveredEl.closest('.section-dark, .hero-dark-side, .site-footer, .quote-ribbon, .site-header')) {
-        document.body.classList.add('cursor-dark');
-      } else {
-        document.body.classList.remove('cursor-dark');
+      if (hoveredEl) {
+        if (hoveredEl.closest('.section-dark, .hero-dark-side, .site-footer, .quote-ribbon, .site-header')) {
+          document.body.classList.add('cursor-dark');
+        } else {
+          document.body.classList.remove('cursor-dark');
+        }
       }
-    });
+    };
+
+    window.addEventListener('mousemove', onFirstMouseMove, { passive: true });
 
     // Smooth physics loop for the magnifying glass
     const animateMagnifier = () => {
-      const speed = 0.22;
-      currentX += (mouseX - currentX) * speed;
-      currentY += (mouseY - currentY) * speed;
+      if (isTracking) {
+        const speed = 0.22;
+        currentX += (mouseX - currentX) * speed;
+        currentY += (mouseY - currentY) * speed;
 
-      magnifierCursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+        magnifierCursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+      }
 
       requestAnimationFrame(animateMagnifier);
     };
     requestAnimationFrame(animateMagnifier);
 
-    // Interactive Magnification Hover Effect
-    const magnifyTargets = document.querySelectorAll(
-      'a, button, input, textarea, .skill-pill, .project-card, .contact-channel-card, .about-info-card, .hero-social-item, .filter-btn, .btn-copy'
-    );
-
-    magnifyTargets.forEach((el) => {
-      el.addEventListener('mouseenter', () => {
+    // Event delegation for interactive magnification hover effect
+    document.addEventListener('mouseover', (e) => {
+      if (e.target && e.target.closest('a, button, input, textarea, .skill-pill, .project-card, .contact-channel-card, .about-info-card, .hero-social-item, .filter-btn, .btn-copy, .nav-link')) {
         document.body.classList.add('magnifier-hover');
-      });
-      el.addEventListener('mouseleave', () => {
-        document.body.classList.remove('magnifier-hover');
-      });
+      }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+      if (e.target && e.target.closest('a, button, input, textarea, .skill-pill, .project-card, .contact-channel-card, .about-info-card, .hero-social-item, .filter-btn, .btn-copy, .nav-link')) {
+        if (!e.relatedTarget || !e.relatedTarget.closest('a, button, input, textarea, .skill-pill, .project-card, .contact-channel-card, .about-info-card, .hero-social-item, .filter-btn, .btn-copy, .nav-link')) {
+          document.body.classList.remove('magnifier-hover');
+        }
+      }
     });
 
     // Click / Active State (Magnifier compression effect)
@@ -66,7 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
       magnifierCursor.style.opacity = '0';
     });
     document.addEventListener('mouseenter', () => {
-      magnifierCursor.style.opacity = '1';
+      if (isTracking) {
+        magnifierCursor.style.opacity = '1';
+      }
     });
   }
 
