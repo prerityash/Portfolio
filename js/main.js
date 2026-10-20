@@ -232,4 +232,39 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // --- 6. Analytics Event Tracking ---
+  const trackEvent = (name, data = {}) => {
+    if (typeof window.va === 'function') {
+      window.va('event', { name, ...data });
+    }
+  };
+
+  // Track CV downloads and views
+  document.querySelectorAll('a[href*="My_CV.pdf"]').forEach(link => {
+    link.addEventListener('click', () => {
+      const isDownload = link.hasAttribute('download');
+      trackEvent(isDownload ? 'download_cv' : 'view_cv');
+    });
+  });
+
+  // Track external social & repository clicks
+  document.querySelectorAll('a[target="_blank"]').forEach(link => {
+    link.addEventListener('click', () => {
+      const href = link.getAttribute('href') || '';
+      if (href.includes('github.com')) {
+        trackEvent('click_github', { url: href });
+      } else if (href.includes('linkedin.com')) {
+        trackEvent('click_linkedin', { url: href });
+      }
+    });
+  });
+
+  // Track category filter clicks
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      trackEvent('filter_projects', { category: btn.getAttribute('data-filter') });
+    });
+  });
 });
+
