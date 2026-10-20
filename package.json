@@ -1,0 +1,17 @@
+{
+  "name": "soumya-prerit-portfolio",
+  "version": "1.0.0",
+  "description": "Minimalist Developer Portfolio for Soumya Prerit, inspired by Tomasz Gajda",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "npx serve ."
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  },
+  "author": "Soumya Prerit",
+  "license": "MIT"
+}

@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soumya Prerit | Full Stack Developer & Student</title>
+  <meta name="description"
+    content="Portfolio of Soumya Prerit - 3rd Year Computer Science Student at Lovely Professional University (Graduating 2028) & Full Stack Developer.">
+  <meta name="keywords"
+    content="Soumya Prerit, Portfolio, Lovely Professional University, Full Stack Developer, Software Engineer, Web Development">
+  <meta name="author" content="Soumya Prerit">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&family=Raleway:wght@400;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="top">
+
+  <!-- Custom Magnifier Cursor -->
+  <div class="magnifier-cursor" id="magnifierCursor">
+    <div class="magnifier-glass">
+      <div class="magnifier-rim"></div>
+      <div class="magnifier-glare"></div>
+      <div class="magnifier-focal-ring"></div>
+      <div class="magnifier-crosshair"></div>
+    </div>
+    <div class="magnifier-stem"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="site-header" id="navbar">
+    <div class="nav-container">
+      <a href="#top" class="nav-logo" aria-label="Home">
+        <span class="logo-box">SP</span>
+        <span class="logo-name">Soumya Prerit</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#about-me" class="nav-link">About Me</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="assets/docs/My_CV.pdf" target="_blank" rel="noopener noreferrer"
+              class="nav-link nav-cv-link">View CV</a></li>
+          <li><a href="assets/docs/My_CV.pdf" download="Soumya_Prerit_CV.pdf" class="nav-link nav-cv-download">Download
+              CV</a></li>
+          <li><a href="#contact" class="nav-btn-contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <ul class="mobile-nav-links">
+        <li><a href="#about-me" class="mobile-nav-link">About Me</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#portfolio" class="mobile-nav-link">Portfolio</a></li>
+        <li><a href="assets/docs/My_CV.pdf" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">View
+            CV</a></li>
+        <li><a href="assets/docs/My_CV.pdf" download="Soumya_Prerit_CV.pdf" class="mobile-nav-link">Download CV</a></li>
+        <li><a href="#contact" class="mobile-nav-link mobile-contact-btn">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section (Iconic Tomasz Gajda Diagonal Split) -->
+  <section class="hero-section">
+    <!-- Light Side (Left) -->
+    <div class="hero-light-side">
+      <div class="hero-content">
+        <p class="hero-intro">Hi, I am</p>
+        <h1 class="hero-name">Soumya Prerit</h1>
+        <h2 class="hero-role">3rd Year CSE student<br><span class="role-sub">at Lovely professional University</span>
+        </h2>
+
+        <p class="hero-bio-short">
+          Passionate about building scalable web applications, robust backends, and intuitive digital interfaces.
+          Constantly exploring modern tech stacks and solving real-world challenges.
+        </p>
+
+        <!-- Social Contacts List (Tomasz Gajda Style) -->
+        <ul class="hero-social-list">
+          <li>
+            <a href="mailto:prerityash@gmail.com" class="hero-social-item" title="Send email">
+              <div class="social-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <span class="social-text">prerityash@gmail.com</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/prerityash" target="_blank" rel="noopener noreferrer" class="hero-social-item"
+              title="Visit GitHub">
+              <div class="social-icon-box">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+              </div>
+              <span class="social-text">github.com/prerityash</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/soumya-prerit-/" target="_blank" rel="noopener noreferrer"
+              class="hero-social-item" title="Visit LinkedIn">
+              <div class="social-icon-box">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.97 0-1.75-.79-1.75-1.76s.78-1.75 1.75-1.75c.97 0 1.76.78 1.76 1.75s-.79 1.76-1.76 1.76m1.4 9.74v-8.37H5.06v8.37h2.8z" />
+                </svg>
+              </div>
+              <span class="social-text">linkedin.com/in/soumya-prerit-</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Action & CV Buttons -->
+        <div class="hero-actions">
+          <a href="assets/docs/My_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary btn-cv">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            <span>View CV</span>
+          </a>
+
+          <a href="assets/docs/My_CV.pdf" download="Soumya_Prerit_CV.pdf" class="btn-secondary btn-cv">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Download CV</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dark Side (Right / Diagonal Cut with User's Photo) -->
+    <div class="hero-dark-side">
+      <div class="hero-portrait-wrapper">
+        <div class="portrait-glow-backdrop"></div>
+        <img src="assets/images/Confident Young Man in White Shirt.png" alt="Soumya Prerit" class="hero-portrait-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Seneca Quote Ribbon (Tomasz Gajda Signature) -->
+  <section class="quote-ribbon">
+    <div class="container text-center">
+      <blockquote class="signature-quote">
+        "IT IS NOT BECAUSE THINGS ARE DIFFICULT THAT WE DO NOT DARE, IT IS BECAUSE WE DO NOT DARE THAT THEY ARE
+        DIFFICULT."
+      </blockquote>
+      <p class="quote-author">— SENECA</p>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section class="section section-dark" id="about-me">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="section-title">About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-main-text">
+          <p class="lead-text">
+            Hi! I’m <strong>Soumya Prerit</strong>, a 3rd-year Computer Science &amp; Engineering undergraduate at
+            <strong>Lovely Professional University (LPU)</strong>, graduating in <strong>2028</strong>.
+          </p>
+          <p>
+            I am a software developer with a strong foundation in full stack web development, data structures, and
+            computer science fundamentals. I enjoy building practical software that solves real problems—from designing
+            responsive frontends to architecting reliable backend services and APIs.
+          </p>
+          <p>
+            As a student, I actively spend my time building projects, learning scalable architectures, exploring modern
+            frameworks, and refining clean code practices. I am enthusiastic about collaborating with development teams,
+            taking on challenging problems, and contributing to impactful engineering projects.
+          </p>
+
+          <div class="about-highlights-row">
+            <div class="highlight-item">
+              <span class="highlight-number">2028</span>
+              <span class="highlight-label">Graduation Year</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-number">LPU</span>
+              <span class="highlight-label">Lovely Professional Univ.</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-number">100%</span>
+              <span class="highlight-label">Commitment to Quality</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-cards-column">
+          <div class="about-info-card">
+            <div class="card-corner-tag">Academics</div>
+            <h3 class="card-title">Lovely Professional University</h3>
+            <p class="card-subtitle">B.Tech in Computer Science &amp; Engineering (2024 - 2028)</p>
+            <p class="card-desc">Coursework in Data Structures &amp; Algorithms, Database Management Systems, Operating
+              Systems, Computer Networks, and Object-Oriented Software Engineering.</p>
+          </div>
+
+          <div class="about-info-card">
+            <div class="card-corner-tag">Major</div>
+            <h3 class="card-title">Full Stack Development</h3>
+            <p class="card-subtitle">Modern Web Applications &amp; RESTful Architectures</p>
+            <p class="card-desc">Building end-to-end applications with responsive interfaces, secure authentication,
+              database modeling, and performant server-side APIs.</p>
+          </div>
+
+          <div class="about-info-card">
+            <div class="card-corner-tag">Interests</div>
+            <h3 class="card-title">Engineering Curiosity</h3>
+            <p class="card-subtitle">Continuous Learning &amp; Problem Solving</p>
+            <p class="card-desc">Passionate about clean architecture, distributed systems, developer tooling, system
+              optimization, and open-source software.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section (Exact Tomasz Gajda 3-Category Breakdown) -->
+  <section class="section section-light" id="skills">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="section-title title-dark">Skills</h2>
+      </div>
+      <p class="section-subtitle">
+        A breakdown of the technologies and tools I utilize in development, actively explore, and have working
+        proficiency in.
+      </p>
+
+      <!-- Category 1: USING NOW -->
+      <div class="skills-category-block">
+        <div class="category-heading">
+          <span class="category-bullet"></span>
+          <h3>Using Now</h3>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-pill">
+            <span class="skill-name">JavaScript (ES6+)</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">React.js</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">Node.js</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">Express.js</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">HTML5</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">CSS3</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">Tailwind CSS</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">MongoDB</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">Git &amp; GitHub</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">RESTful APIs</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">JSON / AJAX</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">Responsive Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 2: LEARNING -->
+      <div class="skills-category-block">
+        <div class="category-heading">
+          <span class="category-bullet"></span>
+          <h3>Learning &amp; Exploring</h3>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-pill">
+            <span class="skill-name">TypeScript</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">Next.js</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">System Design Basics</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">Docker</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">SQL / Relational Databases</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">Cloud Deployment (Vercel / Render / AWS)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 3: OTHER SKILLS -->
+      <div class="skills-category-block">
+        <div class="category-heading">
+          <span class="category-bullet"></span>
+          <h3>Other Skills &amp; Languages</h3>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-pill">
+            <span class="skill-name">C / C++</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">Java</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">Python Basics</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">Data Structures &amp; Algorithms</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">Linux / CLI</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">Postman</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">Object-Oriented Programming (OOP)</span>
+          </div>
+          <div class="skill-pill">
+            <span class="skill-name">Debugging &amp; Problem Solving</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Portfolio Section (Minimalist Repository Showcase - Only User's Specified Repos) -->
+  <section class="section section-dark" id="portfolio">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Portfolio</h2>
+      </div>
+
+      <!-- Portfolio Filter Tabs -->
+      <div class="portfolio-filter-tabs">
+        <button class="filter-btn active" data-filter="all">All (12)</button>
+        <button class="filter-btn" data-filter="fullstack">Full Stack &amp; Web</button>
+        <button class="filter-btn" data-filter="systems">Systems &amp; Core</button>
+        <button class="filter-btn" data-filter="ai-innovation">AI &amp; Innovation</button>
+      </div>
+
+      <!-- Project Cards Grid (Pure Minimalist Typographic & Architectural Layout) -->
+      <div class="portfolio-grid">
+
+        <!-- 1. Netly -->
+        <article class="project-card" data-category="fullstack">
+          <div class="card-meta">
+            <span class="card-badge">Full Stack</span>
+            <span class="card-date">Featured</span>
+          </div>
+          <h3 class="project-title">Netly</h3>
+          <p class="project-desc">
+            Full-stack professional networking and developer collaboration platform. Features real-time team messaging,
+            interactive connection hubs, user profiles, and seamless community feeds.
+          </p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">REST API</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://github.com/prerityash/Netly" target="_blank" rel="noopener noreferrer"
+              class="btn-card-primary">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+              <span>GitHub Repo</span>
+            </a>
+            <a href="https://github.com/prerityash/Netly" target="_blank" rel="noopener noreferrer"
+              class="btn-card-secondary">
+              <span>View Source &rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. netly-landing -->
+        <article class="project-card" data-category="fullstack">
+          <div class="card-meta">
+            <span class="card-badge">Frontend / UI</span>
+            <span class="card-date">Web</span>
+          </div>
+          <h3 class="project-title">netly-landing</h3>
+          <p class="project-desc">
+            Responsive, conversion-optimized landing interface for Netly. Features refined typography, smooth
+            micro-interactions, accessibility compliance, and cross-device performance.
+          </p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Responsive UI</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://github.com/prerityash/netly-landing" target="_blank" rel="noopener noreferrer"
+              class="btn-card-primary">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+              <span>GitHub Repo</span>
+            </a>
+            <a href="https://github.com/prerityash/netly-landing" target="_blank" rel="noopener noreferrer"
+              class="btn-card-secondary">
+              <span>View Source &rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 3. Coderrhub -->
+        <article class="project-card" data-category="fullstack">
+          <div class="card-meta">
+            <span class="card-badge">Community / Web</span>
+            <span class="card-date">Platform</span>
+          </div>
+          <h3 class="project-title">Coderrhub</h3>
+          <p class="project-desc">
+            Collaborative coding portal created for developers to share technical snippets, ask programming questions,
+            review implementations, and solve challenges together.
+          </p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://github.com/prerityash/Coderrhub" target="_blank" rel="noopener noreferrer"
+              class="btn-card-primary">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+              <span>GitHub Repo</span>
+            </a>
+            <a href="https://github.com/prerityash/Coderrhub" target="_blank" rel="noopener noreferrer"
+              class="btn-card-secondary">
+              <span>View Source &rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 4. Jinne -->
+        <article class="project-card" data-category="ai-innovation">
+          <div class="card-meta">
+            <span class="card-badge">AI &amp; Automation</span>
+            <span class="card-date">App</span>
+          </div>
+          <h3 class="project-title">Jinne</h3>
+          <p class="project-desc">
+            Intelligent digital assistant application providing conversational productivity tooling, query responses,
+            and automated routine workflows.
+          </p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">AI Integration</span>
+            <span class="tech-tag">Automation</span>
+            <span class="tech-tag">APIs</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://github.com/prerityash/Jinne" target="_blank" rel="noopener noreferrer"
+              class="btn-card-primary">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+              <span>GitHub Repo</span>
+            </a>
+            <a href="https://github.com/prerityash/Jinne" target="_blank" rel="noopener noreferrer"
+              class="btn-card-secondary">
+              <span>View Source &rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 5. SIH26027 -->
+        <article class="project-card" data-category="ai-innovation">
+          <div class="card-meta">
+            <span class="card-badge">Hackathon</span>
+            <span class="card-date">SIH</span>
+          </div>
+          <h3 class="project-title">SIH26027</h3>
+          <p class="project-desc">
+            Smart India Hackathon national initiative addressing complex public domain challenges. Built with scalable
+            web services, data processing, and user-friendly dashboards.
+          </p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">Full Stack</span>
+            <span class="tech-tag">SIH</span>
+            <span class="tech-tag">Architecture</span>
+            <span class="tech-tag">Database</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://github.com/prerityash/SIH26027" target="_blank" rel="noopener noreferrer"
+              class="btn-card-primary">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+              <span>GitHub Repo</span>
+            </a>
+            <a href="https://github.com/prerityash/SIH26027" target="_blank" rel="noopener noreferrer"
+              class="btn-card-secondary">
+              <span>View Source &rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 6. jobportal -->
+        <article class="project-card" data-category="fullstack">
+          <div class="card-meta">
+            <span class="card-badge">Full Stack</span>
+            <span class="card-date">Web</span>
+          </div>
+          <h3 class="project-title">jobportal</h3>
+          <p class="project-desc">
+            End-to-end recruitment platform enabling candidates to discover vacancies, apply with resumes, and allowing
+            hiring managers to post positions and manage candidate status.
+          </p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Auth</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://github.com/prerityash/jobportal" target="_blank" rel="noopener noreferrer"
+              class="btn-card-primary">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+              <span>GitHub Repo</span>
+            </a>
+            <a href="https://github.com/prerityash/jobportal" target="_blank" rel="noopener noreferrer"
+              class="btn-card-secondary">
+              <span>View Source &rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 7. Digital-crime-portal -->
+        <article class="project-card" data-category="fullstack">
+          <div class="card-meta">
+            <span class="card-badge">Security &amp; Web</span>
+            <span class="card-date">Portal</span>
+          </div>
+          <h3 class="project-title">Digital-crime-portal</h3>
+          <p class="project-desc">
+            Digital incident recording and cyber security management portal. Designed for secure citizen reporting,
+            status verification, evidence documentation, and administrative review.
+          </p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">Web Security</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express</span>
+            <span class="tech-tag">Database</span>
+            <span class="tech-tag">Access Control</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://github.com/prerityash/Digital-crime-portal" target="_blank" rel="noopener noreferrer"
+              class="btn-card-primary">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+              <span>GitHub Repo</span>
+            </a>
+            <a href="https://github.com/prerityash/Digital-crime-portal" target="_blank" rel="noopener noreferrer"
+              class="btn-card-secondary">
+              <span>View Source &rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 8. Alumni Management System -->
+        <article class="project-card" data-category="fullstack">
+          <div class="card-meta">
+            <span class="card-badge">Management</span>
+            <span class="card-date">Network</span>
+          </div>
+          <h3 class="project-title">Alumni Management System</h3>
+          <p class="project-desc">
+            Community and institutional platform linking university graduates with current students. Facilitates career
+            mentorship, university reunion tracking, and networking channels.
+          </p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">Full Stack</span>
+            <span class="tech-tag">Database</span>
+            <span class="tech-tag">CRUD</span>
+            <span class="tech-tag">User Auth</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://github.com/prerityash/Alumni-Management-System" target="_blank" rel="noopener noreferrer"
+              class="btn-card-primary">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+              <span>GitHub Repo</span>
+            </a>
+            <a href="https://github.com/prerityash/Alumni-Management-System" target="_blank" rel="noopener noreferrer"
+              class="btn-card-secondary">
+              <span>View Source &rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 9. fileRecoverySystemSimulation -->
+        <article class="project-card" data-category="systems">
+          <div class="card-meta">
+            <span class="card-badge">OS &amp; Algorithms</span>
+            <span class="card-date">Systems</span>
+          </div>
+          <h3 class="project-title">fileRecoverySystemSimulation</h3>
+          <p class="project-desc">
+            Simulation modeling operating system file structures, deleted block pointers, allocation tables, and data
+            sector rebuilding heuristics after partial system corruption.
+          </p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">C / C++</span>
+            <span class="tech-tag">OS Principles</span>
+            <span class="tech-tag">File Systems</span>
+            <span class="tech-tag">Data Structures</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://github.com/prerityash/fileRecoverySystemSimulation" target="_blank"
+              rel="noopener noreferrer" class="btn-card-primary">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+              <span>GitHub Repo</span>
+            </a>
+            <a href="https://github.com/prerityash/fileRecoverySystemSimulation" target="_blank"
+              rel="noopener noreferrer" class="btn-card-secondary">
+              <span>View Source &rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 10. niraksh_2.0 -->
+        <article class="project-card" data-category="systems">
+          <div class="card-meta">
+            <span class="card-badge">System &amp; IoT</span>
+            <span class="card-date">v2.0</span>
+          </div>
+          <h3 class="project-title">niraksh_2.0</h3>
+          <p class="project-desc">
+            Next-generation automated surveillance and telemetry framework. Features accelerated logging, event
+            triggers, telemetry analysis, and modular system alerts.
+          </p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">System Architecture</span>
+            <span class="tech-tag">Automation</span>
+            <span class="tech-tag">Sensors / Telemetry</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://github.com/prerityash/niraksh_2.0" target="_blank" rel="noopener noreferrer"
+              class="btn-card-primary">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+              <span>GitHub Repo</span>
+            </a>
+            <a href="https://github.com/prerityash/niraksh_2.0" target="_blank" rel="noopener noreferrer"
+              class="btn-card-secondary">
+              <span>View Source &rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 11. infinitelearn -->
+        <article class="project-card" data-category="fullstack">
+          <div class="card-meta">
+            <span class="card-badge">EdTech / UI</span>
+            <span class="card-date">Learning</span>
+          </div>
+          <h3 class="project-title">infinitelearn</h3>
+          <p class="project-desc">
+            Interactive digital learning portal designed to deliver structured educational modules, interactive lessons,
+            and continuous student self-assessment tracks.
+          </p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Frontend</span>
+            <span class="tech-tag">EdTech</span>
+            <span class="tech-tag">Web Design</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://github.com/prerityash/infinitelearn" target="_blank" rel="noopener noreferrer"
+              class="btn-card-primary">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+              <span>GitHub Repo</span>
+            </a>
+            <a href="https://github.com/prerityash/infinitelearn" target="_blank" rel="noopener noreferrer"
+              class="btn-card-secondary">
+              <span>View Source &rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 12. Dhara -->
+        <article class="project-card" data-category="fullstack">
+          <div class="card-meta">
+            <span class="card-badge">Sustainability</span>
+            <span class="card-date">App</span>
+          </div>
+          <h3 class="project-title">Dhara</h3>
+          <p class="project-desc">
+            Environmental conservation and resource monitoring platform focusing on water management metrics, ecological
+            sustainability tracking, and community awareness.
+          </p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">Web Application</span>
+            <span class="tech-tag">APIs</span>
+            <span class="tech-tag">Analytics</span>
+            <span class="tech-tag">Sustainability</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://github.com/prerityash/Dhara" target="_blank" rel="noopener noreferrer"
+              class="btn-card-primary">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+              <span>GitHub Repo</span>
+            </a>
+            <a href="https://github.com/prerityash/Dhara" target="_blank" rel="noopener noreferrer"
+              class="btn-card-secondary">
+              <span>View Source &rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- End of Projects Grid -->
+      </div>
+
+      <!-- More Projects Link -->
+      <div class="more-repos-wrap">
+        <a href="https://github.com/prerityash?tab=repositories" target="_blank" rel="noopener noreferrer"
+          class="btn-outline-light">
+          <span>Explore All 12+ Repositories on GitHub</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section section-light" id="contact">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="section-title title-dark">Contact</h2>
+      </div>
+      <p class="section-subtitle">
+        Have a question, opportunity, or want to connect? Feel free to reach out via email, LinkedIn, or the form below.
+      </p>
+
+      <div class="contact-layout">
+        <!-- Direct Channels -->
+        <div class="contact-channels">
+          <div class="contact-channel-card">
+            <div class="channel-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="channel-info">
+              <span class="channel-label">Email</span>
+              <a href="mailto:prerityash@gmail.com" class="channel-value">prerityash@gmail.com</a>
+            </div>
+            <button class="btn-copy" id="copyEmailBtn" title="Copy Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span id="copyEmailText">Copy</span>
+            </button>
+          </div>
+
+          <div class="contact-channel-card">
+            <div class="channel-icon-box">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.97 0-1.75-.79-1.75-1.76s.78-1.75 1.75-1.75c.97 0 1.76.78 1.76 1.75s-.79 1.76-1.76 1.76m1.4 9.74v-8.37H5.06v8.37h2.8z" />
+              </svg>
+            </div>
+            <div class="channel-info">
+              <span class="channel-label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/soumya-prerit-/" target="_blank" rel="noopener noreferrer"
+                class="channel-value">
+                linkedin.com/in/soumya-prerit-
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-channel-card">
+            <div class="channel-icon-box">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+            </div>
+            <div class="channel-info">
+              <span class="channel-label">GitHub</span>
+              <a href="https://github.com/prerityash" target="_blank" rel="noopener noreferrer" class="channel-value">
+                github.com/prerityash
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-channel-card">
+            <div class="channel-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="channel-info">
+              <span class="channel-label">Location</span>
+              <span class="channel-value text-muted">Lovely Professional University, Punjab, India</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Contact Form -->
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="contactName">Your Name</label>
+              <input type="text" id="contactName" name="name" placeholder="John Doe" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contactEmail">Your Email</label>
+              <input type="email" id="contactEmail" name="email" placeholder="john@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contactSubject">Subject</label>
+              <input type="text" id="contactSubject" name="subject" placeholder="Project inquiry / Opportunity"
+                required>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" name="message" rows="5"
+                placeholder="Hi Soumya, I came across your portfolio..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <span>Send Message</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+
+            <!-- Status Alert -->
+            <div class="form-feedback hidden" id="formFeedback"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (Signature Tomasz Gajda Style) -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <!-- Back to Top -->
+      <a href="#top" class="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="arrow-up-icon">
+          <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+        <span class="back-to-top-text">Back To Top</span>
+      </a>
+
+      <!-- Footer Social Icons -->
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/soumya-prerit-/" target="_blank" rel="noopener noreferrer"
+          aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.97 0-1.75-.79-1.75-1.76s.78-1.75 1.75-1.75c.97 0 1.76.78 1.76 1.75s-.79 1.76-1.76 1.76m1.4 9.74v-8.37H5.06v8.37h2.8z" />
+          </svg>
+        </a>
+        <a href="https://github.com/prerityash" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          </svg>
+        </a>
+        <a href="mailto:prerityash@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="footer-attribution">
+        <p>&copy; 2026 Soumya Prerit. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
