@@ -19,6 +19,175 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Inline fail-safe magnifier styles */
+    body.has-custom-cursor,
+    body.has-custom-cursor *,
+    body.has-custom-cursor *::before,
+    body.has-custom-cursor *::after,
+    body.has-custom-cursor a,
+    body.has-custom-cursor button,
+    body.has-custom-cursor input,
+    body.has-custom-cursor textarea,
+    body.has-custom-cursor select {
+      cursor: none !important;
+    }
+    .magnifier-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 999999;
+      will-change: transform;
+      transform: translate3d(-100px, -100px, 0);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .magnifier-glass {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      pointer-events: none;
+      transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1), height 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .magnifier-rim {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 3px solid #000000;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), inset 0 0 10px rgba(0, 0, 0, 0.15);
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: brightness(1.1) contrast(1.12);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .magnifier-glare {
+      position: absolute;
+      top: 5px;
+      left: 7px;
+      width: 14px;
+      height: 7px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0));
+      transform: rotate(-35deg);
+      pointer-events: none;
+    }
+    .magnifier-focal-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px dashed rgba(0, 0, 0, 0.45);
+      transform: translate(-50%, -50%);
+      transition: all 0.25s ease;
+    }
+    .magnifier-crosshair {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #000000;
+      transform: translate(-50%, -50%);
+      opacity: 0.65;
+      transition: background-color 0.2s ease;
+    }
+    .magnifier-stem {
+      position: absolute;
+      top: 13px;
+      left: 13px;
+      width: 18px;
+      height: 5px;
+      background-color: #000000;
+      border-radius: 3px;
+      transform: rotate(45deg);
+      transform-origin: 0 50%;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+      transition: background-color 0.2s ease, top 0.25s ease, left 0.25s ease, width 0.25s ease, height 0.25s ease;
+    }
+    body.cursor-dark .magnifier-rim {
+      border-color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.35), inset 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+    body.cursor-dark .magnifier-stem {
+      background-color: #FFFFFF;
+      box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4);
+    }
+    body.cursor-dark .magnifier-focal-ring {
+      border-color: rgba(255, 255, 255, 0.6);
+    }
+    body.cursor-dark .magnifier-crosshair {
+      background-color: #FFFFFF;
+    }
+    body.magnifier-hover .magnifier-glass {
+      width: 66px;
+      height: 66px;
+      transform: translate(-50%, -50%) scale(1.15);
+    }
+    body.magnifier-hover .magnifier-rim {
+      border-width: 3.5px;
+      border-color: #000000;
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.45), inset 0 0 16px rgba(0, 0, 0, 0.3);
+    }
+    body.cursor-dark.magnifier-hover .magnifier-rim {
+      border-color: #FFFFFF;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.65), inset 0 0 16px rgba(255, 255, 255, 0.4);
+    }
+    body.magnifier-hover .magnifier-stem {
+      top: 20px;
+      left: 20px;
+      width: 24px;
+      height: 6px;
+    }
+    body.magnifier-hover .magnifier-focal-ring {
+      width: 20px;
+      height: 20px;
+      border-style: solid;
+      border-color: rgba(0, 0, 0, 0.7);
+      animation: rotateMagnifierFocal 3s linear infinite;
+    }
+    body.cursor-dark.magnifier-hover .magnifier-focal-ring {
+      border-color: rgba(255, 255, 255, 0.85);
+    }
+    @keyframes rotateMagnifierFocal {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    body.magnifier-active .magnifier-glass {
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+    a:hover, button:hover, .filter-btn:hover {
+      transform: scale(1.08) !important;
+    }
+    .btn-primary:hover, .btn-secondary:hover {
+      transform: scale(1.08) translate(-1px, -1px) !important;
+      box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.5) !important;
+    }
+    .skill-pill:hover {
+      transform: scale(1.15) translateY(-3px) !important;
+      box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.45) !important;
+      z-index: 10;
+      position: relative;
+    }
+    .project-card:hover {
+      transform: translateY(-8px) scale(1.035) !important;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.65) !important;
+      border-color: rgba(255, 255, 255, 0.45) !important;
+      z-index: 5;
+    }
+    @media (max-width: 768px) {
+      .magnifier-cursor { display: none !important; }
+      *, *::before, *::after, html, body, a, button, input, textarea, select { cursor: auto !important; }
+    }
+  </style>
 </head>
 
 <body id="top">
@@ -958,6 +1127,66 @@
       </div>
     </div>
   </footer>
+
+  <!-- Inline Bulletproof Magnifier Cursor Tracker -->
+  <script>
+    (function () {
+      const magnifier = document.getElementById('magnifierCursor');
+      if (!magnifier) return;
+      let mouseX = -100, mouseY = -100, currentX = -100, currentY = -100;
+      let isTracking = false;
+
+      function onMove(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if (!isTracking) {
+          isTracking = true;
+          currentX = mouseX;
+          currentY = mouseY;
+          magnifier.style.transform = 'translate3d(' + currentX + 'px, ' + currentY + 'px, 0)';
+          magnifier.style.opacity = '1';
+          document.body.classList.add('has-custom-cursor');
+        }
+        const el = document.elementFromPoint(mouseX, mouseY);
+        if (el) {
+          if (el.closest('.section-dark, .hero-dark-side, .site-footer, .quote-ribbon, .site-header')) {
+            document.body.classList.add('cursor-dark');
+          } else {
+            document.body.classList.remove('cursor-dark');
+          }
+        }
+      }
+
+      window.addEventListener('mousemove', onMove, { passive: true });
+
+      function animate() {
+        if (isTracking) {
+          currentX += (mouseX - currentX) * 0.22;
+          currentY += (mouseY - currentY) * 0.22;
+          magnifier.style.transform = 'translate3d(' + currentX + 'px, ' + currentY + 'px, 0)';
+        }
+        requestAnimationFrame(animate);
+      }
+      requestAnimationFrame(animate);
+
+      document.addEventListener('mouseover', function (e) {
+        if (e.target && e.target.closest('a, button, input, textarea, .skill-pill, .project-card, .contact-channel-card, .about-info-card, .hero-social-item, .filter-btn, .btn-copy, .nav-link')) {
+          document.body.classList.add('magnifier-hover');
+        }
+      });
+      document.addEventListener('mouseout', function (e) {
+        if (e.target && e.target.closest('a, button, input, textarea, .skill-pill, .project-card, .contact-channel-card, .about-info-card, .hero-social-item, .filter-btn, .btn-copy, .nav-link')) {
+          if (!e.relatedTarget || !e.relatedTarget.closest('a, button, input, textarea, .skill-pill, .project-card, .contact-channel-card, .about-info-card, .hero-social-item, .filter-btn, .btn-copy, .nav-link')) {
+            document.body.classList.remove('magnifier-hover');
+          }
+        }
+      });
+      window.addEventListener('mousedown', function () { document.body.classList.add('magnifier-active'); });
+      window.addEventListener('mouseup', function () { document.body.classList.remove('magnifier-active'); });
+      document.addEventListener('mouseleave', function () { magnifier.style.opacity = '0'; });
+      document.addEventListener('mouseenter', function () { if (isTracking) magnifier.style.opacity = '1'; });
+    })();
+  </script>
 
   <script src="js/main.js"></script>
 
